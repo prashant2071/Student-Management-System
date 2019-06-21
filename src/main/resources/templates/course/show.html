@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Create New Student Page</title>
+    <!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+<div layout:fragment="content">
+   	<table class="table table-sm table-nowrap card-table" th:each="courses: ${course}">
+						<thead>
+							<tbody class="list">
+							<tr>
+								<td>course id</td>
+								<td  th:text="${courses.getCourseId()}"></td>
+								</tr>
+								<tr>
+								<td>course name</td>
+								<td  th:text="${courses.getCourseName()}"></td>
+								</tr>
+								<tr>
+								<td>description</td>
+								<td  th:text="${courses.getDescription()}"></td>
+								</tr>
+								<tr>
+								<td>study hours</td>
+								<td  th:text="${courses.getStudyHours()}"></td>
+</tr>
+<tr>
+								<td>start date</td>
+								<td  th:text="${courses.getStartDate()}"></td>
+								
+							</tr>
+						</thead>
+					
+					</tbody>
+				
+					</table>
+</div>
+
+</body>
+</html>

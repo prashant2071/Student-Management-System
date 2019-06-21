@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Student Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">list of students</h6>
+
+								<!-- Title -->
+								<h1 class="header-title"></h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- [[${students}]] -->
+				<div class="card">
+
+					<table class="table table-sm table-nowrap card-table">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>Email Id</th>
+								<th>Birth date</th>
+								<th>first name</th>
+								<th>last name</th>
+								<th>address</th>
+								<th>phone number</th>
+								<th>Father name</th>
+								<th>Joined Date</th>
+							</tr>
+						</thead>
+						<tbody class="list">
+							<tr th:each="student: ${studentlist}">
+								<td class="orders-order" th:text="${student.getId()}"></td>
+								<td class="orders-order" th:text="${student.getEmailId()}"></td>
+								<td class="orders-order" th:text="${student.getBirthDate()}"></td>
+								<td class="orders-order" th:text="${student.getFirstName()}"></td>
+								<td class="orders-order" th:text="${student.getLastName()}"></td>
+								<td class="orders-order" th:text="${student.getAddress()}"></td>
+								<td class="orders-order" th:text="${student.getPhoneNumber()}"></td>
+								<td class="orders-order" th:text="${student.getFatherName()}"></td>
+								<td class="orders-order" th:text="${student.getJoinedYear()}"></td>
+								<td>
+									<form class="mb-4" action="#" th:action="@{/student/show}"
+										method="get">
+										<input type="hidden" name="id"
+											th:value="${student.getId()}">
+										<button type="submit" class="btn btn-primary">show</button>
+
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+
+</body>
+</html>

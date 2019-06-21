@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Student Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">list of</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">Exam</h1>
+											<form class="mb-4" action="#" th:action="@{/exam/show}"
+										method="get">
+										<input type="search" name="id"class="form-control form-control-rounded form-control-prepended"placeholder="Search"aria-label="Search"
+											>
+										<button type="submit" class="btn btn-primary btn-block">search</button>
+
+									</form>		
+ 								  		
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- [[${courselist}]] -->
+				<div class="card">
+					<table class="table table-sm table-nowrap card-table">
+						<thead>
+							<tr>
+								<th>Exam id</th>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>Subject</th>
+								<th>Exam date</th>
+								<th>Invigilator name</th>
+							</tr>
+						</thead>
+						<tbody class="list">
+							<tr th:each="exam: ${examlist}">
+								<td class="orders-order" th:text="${exam.getId()}"></td>
+								<td class="orders-order" th:text="${exam.getFirstname()}"></td>
+								<td class="orders-order" th:text="${exam.getLastname()}"></td>
+								<td class="orders-order" th:text="${exam.getSubject()}"></td>
+								<td class="orders-order" th:text="${exam.getExamDate()}"></td>
+								<td class="orders-order" th:text="${exam.getInvigilatorName()}"></td>
+						
+								<td>
+								<form class="mb-4" action="#" th:action="@{/exam/show}" method="get">
+								 <input type="hidden" name="id" th:value="${exam.getId()}">
+									<button type="submit" class="btn btn-primary">show</button>
+								
+									</form>
+									<form class="mb-4" action="#" th:action="@{/exam/edit}" method="post">
+								 <input type="hidden" name="id" th:value="${exam.getId()}">
+									<button type="submit" class="btn btn-md btn-warning">edit</button>
+								
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+
+</body>
+</html>

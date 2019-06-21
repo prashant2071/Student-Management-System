@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Teacher Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">Create New</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">Teacher</h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form -->
+				<form class="mb-4" action="#" th:object="${teacher}" 
+				th:action="@{/teacher/create}" method="post">
+
+					<div class="row">
+						<div class="col-12 col-md-6">
+
+							<!-- First name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label>Full Name </label>
+
+								<!-- Input -->
+								<input class="form-control" type="text" 
+								th:field="*{name}" placeholder="Full Name">
+
+							</div>
+
+						</div>
+						<div class="col-12">
+
+							<!-- Email address -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label class="mb-1"> Phone Number </label>
+
+								<!-- Form text -->
+								<small class="form-text text-muted"> This contact will
+									be shown to others publicly, so choose it carefully. </small>
+
+								<!-- Input -->
+								<input class="form-control" type="text" th:field="*{phoneno}" placeholder="Phone Number">
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Phone -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> Address </label>
+
+								<!-- Input -->
+								<input class="form-control mb-3" placeholder="Address"  th:field="*{address}" type="text">
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Birthday -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> JoinedDate </label>
+
+								<!-- Input -->
+								<input class="form-control flatpickr-input"
+									data-toggle="flatpickr" type="text"  th:field="*{joinedDate}" placeholder="JoinedDate">
+
+							</div>
+
+						</div>
+					</div>
+
+					<div>
+						<small class="text-muted text-center">
+							<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						</small>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Create New Student Page</title>
+    <!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+<div layout:fragment="content">
+
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+                <div class="header-body">
+                    <div class="row align-items-center">
+                        <div class="col">
+
+                            <!-- Pretitle -->
+                            <h6 class="header-pretitle">
+                                Create New
+                            </h6>
+
+                            <!-- Title -->
+                            <h1 class="header-title">
+                                course
+                            </h1>
+
+                        </div>
+                    </div> <!-- / .row -->
+                    <div class="row align-items-center">
+                        <div class="col">
+
+                            <!-- Nav -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form class="mb-4" action="#" th:action="@{/course/create}"th:object="${course}" method="post" >
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+
+                        <!-- First name -->
+                        <div class="form-group">
+
+                            <!-- Label -->
+                            <label>
+                                Course id
+                            </label>
+
+                            <!-- Input -->
+                           <input type="number" th:field="*{courseId}" 
+								class="form-control" /> 
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+
+                        <!-- Last name -->
+                        <div class="form-group">
+
+                            <!-- Label -->
+                            <label>
+                                course name
+                            </label>
+
+                            <!-- Input -->
+                          <input type="text" th:field="*{courseName}"
+								class="form-control" /> 
+
+                        </div>
+
+                    </div>
+                    <div class="col-12">
+
+                        <!-- Email address -->
+                        <div class="form-group">
+
+                            <!-- Label -->
+                            <label class="mb-1">
+                                Description
+                            </label>
+
+                            <!-- Form text -->
+                
+
+                            <!-- Input -->
+                           <input type="text" th:field="*{description}" 
+								class="form-control" /> 
+
+                        </div>
+
+                    </div>
+                      <div class="col-12 col-md-6">
+
+                        <!-- Birthday -->
+                        <div class="form-group">
+
+                            <!-- Label -->
+                            <label>
+                             start date
+                            </label>
+
+                            <!-- Input -->
+                           
+  <input type="text" th:field="*{startDate}" 
+								class="form-control" />
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6">
+
+                        <!-- Phone -->
+                        <div class="form-group">
+
+                            <!-- Label -->
+                            <label>
+                                Study hours
+                            </label>
+
+                            <!-- Input -->
+                          <input type="text" th:field="*{studyHours}" 
+								class="form-control" /> 
+                        </div>
+
+                    </div>
+                     <div class="form-group">
+
+                            <!-- Label -->
+                            <label class="mb-1">
+                               file
+                            </label>
+
+                            <!-- Form text -->
+                
+
+                            <!-- Input -->
+                           <input type="file" class="form-control form-control-rounded form-control-prepended " /> 
+
+                        </div>
+
+                    </div>
+                  
+                </div> <!-- / .row -->
+
+                <!-- Divider -->
+                <!--<hr class="mt-4 mb-5">-->
+
+
+
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn btn-primary">
+                            Update course
+                        </button>
+
+                    </div>
+                </div> <!-- / .row -->
+
+            </form>
+
+        </div>
+    </div> <!-- / .row -->
+
+
+</div>
+
+</body>
+</html>

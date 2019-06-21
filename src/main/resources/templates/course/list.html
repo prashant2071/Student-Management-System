@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Student Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">list of</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">courses</h1>
+								
+								  <!--  <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">  -->
+ 								  			
+ 								  			<form class="mb-4" action="#" th:action="@{/course/show}"
+										method="get">
+										<input type="search" name="id"class="form-control form-control-rounded form-control-prepended"placeholder="Search"aria-label="Search"
+											>
+										<button type="submit" class="btn btn-primary btn-block">search</button>
+
+									</form>		
+ 								  	
+
+                        </div>
+ 								 
+							</div>
+							
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- [[${courselist}]] -->
+				<div class="card">
+
+					<table class="table table-sm table-nowrap card-table">
+						<thead>
+							<tr>
+								<th>course id</th>
+								<th>course name</th>
+								<th>description</th>
+								<th>study hours</th>
+								<th>start date</th>
+								<th>action</th>
+<!-- 								<th>edit</th>
+ -->							</tr>
+						</thead>
+						<tbody class="list">
+							<tr th:each="courses: ${courselist}">
+								<td class="orders-order" th:text="${courses.getCourseId()}"></td>
+								<td class="orders-order" th:text="${courses.getCourseName()}"></td>
+								<td class="orders-order" th:text="${courses.getDescription()}"></td>
+								<td class="orders-order" th:text="${courses.getStudyHours()}"></td>
+								<td class="orders-order" th:text="${courses.getStartDate()}"></td>
+								<td>
+									<form class="mb-4" action="#" th:action="@{/course/show}"
+										method="get">
+										<input type="hidden" name="id"
+											th:value="${courses.getCourseId()}">
+										<button type="submit" class="btn btn-primary btn-block">show</button>
+
+									</form>
+									
+		<!-- 						<form class="mb-4" action="#" th:action="@{/course/show}"
+										method="get">
+										<input type="search" name="id"class="form-control form-control-rounded form-control-prepended"
+											th:value="${courses.getCourseId()}">
+										<button type="submit" class="btn btn-primary">search</button>
+
+									</form> -->
+								<form class="mb-4" action="#" th:action="@{/course/edit}"
+										method="get">
+										<input type="hidden" name="id"
+											th:value="${courses.getCourseId()}">
+										<button type="submit" class="btn btn-md btn-warning btn-block">edit</button>
+										</form>
+								</td>
+							</tr>
+							<!-- 		<tr>
+							<form class="mb-4" action="#" th:action="@{/course/show}" method="get">
+
+                            Label
+                            <label>
+                               search
+                            </label>
+
+                            Input
+                          <input type="text" class="form-control" /> 
+
+								 <input type="hidden" name="id" th:value="${courses.getCourseId()}">
+									<button type="submit" class="btn btn-primary">search</button>
+							</tr>
+ -->
+						</tbody>
+					</table>
+
+
+
+				</div>
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Student Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+		<table class="table table-sm table-nowrap card-table"
+			th:each="student: ${student}">
+			<thead>
+			<tbody class="list">
+				<tr>
+					<td>student id</td>
+					<td th:text="${student.getId()}"></td>
+				</tr>
+				<tr>
+					<td>student name</td>
+					<td th:text="${student.getEmailId()}"></td>
+				</tr>
+				<tr>
+					<td>Birth date</td>
+					<td th:text="${student.getBirthDate()}"></td>
+				</tr>
+				<tr>
+					<td>First name</td>
+					<td th:text="${student.getFirstName()}"></td>
+				</tr>
+				<tr>
+					<td>Last name</td>
+					<td th:text="${student.getLastName()}"></td>
+				</tr>
+			
+                 <tr>
+					<td>Student address</td>
+					<td th:text="${student.getAddress()}"></td>
+				</tr>
+				<tr>
+					<td>Phone number</td>
+					<td th:text="${student.getPhoneNumber()}"></td>
+				</tr>
+				<tr>
+					<td>Father's name</td>
+					<td th:text=${student.getFatherName()}></td>
+				</tr>
+				<tr>
+					<td>Joined year</td>
+					<td th:text="${student.getJoinedYear()}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Create New Student Page</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">Create New</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">Student</h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form -->
+				<form class="mb-4" action="#" th:action="@{/student/create}"
+					th:object="${student}" method="post">
+
+					<div class="row">
+						<div class="col-12 col-md-6">
+
+							<!-- First name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> firstName </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{firstName}"
+									placeholder="first_name" class="form-control" />
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Last name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label>lastName</label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{lastName}"
+									placeholder="last_name" class="form-control" />
+
+							</div>
+
+						</div>
+						<div class="col-12">
+
+							<!-- Email address -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label>emailId</label>
+
+								<!-- Form text -->
+								<small class="form-text text-muted"> This contact will
+									be shown to others publicly, so choose it carefully. </small>
+
+								<!-- Input -->
+								<input type="text" th:field="*{emailId}" placeholder="email_id"
+									class="form-control" />
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Phone -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> phoneNumber </label>
+								<!-- Input -->
+								<input class="form-control mb-3" autocomplete="off" th:field="*{phoneNumber}"
+									maxlength="14" type="number">
+							</div> 
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Birthday -->
+							<div class="form-group">
+
+							<!-- 	Label -->
+								<label> birthDay </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{birthDate}"
+									placeholder="birth_date" class="form-control" />
+							</div>
+
+						</div>
+					</div>
+					<!-- / .row -->
+
+
+					<!-- Divider -->
+					<hr class="mt-4 mb-5">
+
+					<div class="row">
+						<div class="col-12 col-md-6 order-md-2"></div>
+						<div class="col-12 col-md-6">
+
+							<!-- Address -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> address </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{address}" placeholder="address"
+									class="form-control" />
+
+							</div>
+
+
+
+						</div>
+					</div>
+					<!-- / .row -->
+
+
+
+					<!-- Divider -->
+					<hr class="mt-4 mb-5">
+
+					<div class="row">
+						<div class="col-12 col-md-6 order-md-2"></div>
+						<div class="col-12 col-md-6">
+
+							<!-- fatherName -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> fatherName </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{fatherName}"
+									placeholder="father_name" class="form-control" />
+
+							</div>
+
+
+
+						</div>
+					</div>
+					<!-- / .row -->
+
+					<!-- Divider -->
+					<hr class="mt-4 mb-5">
+
+					<div class="row">
+						<div class="col-12 col-md-6 order-md-2"></div>
+						<div class="col-12 col-md-6">
+
+							<!-- Joined year -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> joinedYear </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{joinedYear}"
+									placeholder="joined_year" class="form-control" />
+
+							</div>
+
+
+
+					</div>
+			</div>
+			<!-- / .row -->
+
+			<!-- Submit -->
+			<button type="submit" class="btn btn-primary">add new
+				student</button>
+			</form>
+		</div>
+	</div>
+	<!-- / .row -->
+
+
+
+	</div>
+
+	<!-- / .row -->
+
+
+
+
+</body>
+</html>

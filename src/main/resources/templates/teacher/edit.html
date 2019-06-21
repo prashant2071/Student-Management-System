@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>show page</title>
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">Detail Of</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">Teacher</h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+							</div>
+						</div>
+						<div>
+						<tbody class="list">
+						</tbody>
+						</div>
+					</div>
+				</div>
+				<!-- [[${teacherlist}]] -->
+				
+				<!-- <div class="card">
+				<div class="table-responsive">
+					<table class="table table-sm table-nowrap card-table">
+					<thead>
+						<tr>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>JoinedDate</th>
+						</tr>
+						</thead>
+						<tbody class="list">
+						<tr th:each="teacher: ${teacher}">
+						 <td class="orders-status" th:text="${teacher.getName()}"></td> 
+						  <td class="orders-status" th:text="${teacher.getAddress()}"></td>
+						 <td class="orders-status" th:text="${teacher.getPhoneno()}"></td>
+						 <td class="orders-status" th:text="${teacher.getJoinedDate()}"></td>
+ 						</tr>
+						</tbody>
+
+					</table>
+					</div>
+				</div> -->
+			</div>
+		</div>
+
+
+	</div>
+
+
+</body>
+
+
+
+</html>

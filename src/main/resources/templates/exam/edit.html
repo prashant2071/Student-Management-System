@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Exam form registration</title>
+<!--<link rel="stylesheet" href="/css/hello.css"/>-->
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">Create new</h6>
+
+								<!-- Title -->
+								<h1 class="header-title"></h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form -->
+				<form class="mb-4" action="#" th:action="@{/exam/create}" th:object="${exam}" method="post">
+
+					<div class="row">
+					<div class="col-12 col-md-6">
+
+							<!-- First name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> exam id </label>
+
+								<!-- Input -->
+								<input type="number" th:field="*{id}" class="form-control" />
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- First name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> First name </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{firstname}"  class="form-control"/>
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Last name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> Last name </label>
+
+								<!-- Input -->
+								<input type="text" th:field="*{lastname}"  class="form-control"/>
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Last name -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> Subject </label>
+
+								<!-- Input -->
+							<input type="text" th:field="*{subject}"  class="form-control"/>
+
+							</div>
+
+						</div>
+						<div class="col-12 col-md-6">
+
+							<!-- Exam_date -->
+							<div class="form-group">
+
+								<!-- Label -->
+								<label> Exam date </label> 
+
+								<!-- Input -->
+								 <input type="text" placeholder="yyyy-mm-dd" th:field="*{examDate}"  class="form-control"/>
+
+							</div>
+
+						</div>
+							<!-- Invigitor name -->
+							<div class="form-group">
+
+								<!-- Label -->
+							
+								
+								<label> Ivigilator name </label>
+
+								<!-- Input -->
+								 <input type="text" th:field="*{invigilatorName}"  class="form-control"/>
+								
+
+							</div>
+
+						</div>
+						</div>
+						
+
+					<div>
+					<!-- / .row -->
+
+					<!-- Divider -->
+					<!--<hr class="mt-4 mb-5">-->
+
+
+					<!-- Divider -->
+					<hr class="mt-4 mb-5">
+
+		
+					
+
+								<!-- Submit -->
+								<button type="submit" class="btn btn-primary">submit</button>
+
+							
+						<!-- / .row -->
+				</form>
+
+			</div>
+		</div>
+		<!-- / .row -->
+
+
+	</div>
+
+</body>
+</html>

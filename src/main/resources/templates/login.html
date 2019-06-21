@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Spring Security Tutorial</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" />
+</head>
+
+<body class="d-flex align-items-center bg-white border-top-2 border-primary">
+
+<!-- CONTENT
+================================================== -->
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-5 col-xl-4 my-5">
+
+			<!-- Heading -->
+			<h1 class="display-4 text-center mb-3">
+				Sign in
+			</h1>
+
+			<!-- Subheading -->
+			<p class="text-muted text-center mb-5">
+				To access the dashboard.
+			</p>
+
+			<div align="center" th:if="${param.error}">
+				<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+			</div>
+
+			<!-- Form -->
+			<form th:action="@{/login}" method="POST" >
+
+				<!-- Email address -->
+				<div class="form-group">
+
+					<!-- Label -->
+					<label>Email Address</label>
+
+					<!-- Input -->
+					<input type="text" name="email" class="form-control" placeholder="name@address.com">
+
+				</div>
+
+				<!-- Password -->
+				<div class="form-group">
+
+					<div class="row">
+						<div class="col">
+
+							<!-- Label -->
+							<label>Password</label>
+
+						</div>
+						<div class="col-auto">
+
+							<!-- Help text -->
+							<a href="" class="form-text small text-muted">
+								Forgot password?
+							</a>
+
+						</div>
+					</div> <!-- / .row -->
+
+					<!-- Input group -->
+					<div class="input-group input-group-merge">
+
+						<!-- Input -->
+						<input type="password" name="password" id="password" class="form-control form-control-appended"
+							   placeholder="Enter your password">
+
+						<!-- Icon -->
+						<div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fe fe-eye"></i>
+                  </span>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Submit -->
+				<button class="btn btn-lg btn-block btn-primary mb-3">
+					Sign in
+				</button>
+
+				<!-- Link -->
+			</form>
+
+			<div class="text-center">
+
+				<!--Don't have an account yet? <a href="sign-up.html">Sign up</a>.-->
+				<form th:action="@{/registration}" method="get">
+					<small class="text-muted text-center">
+						<button class="btn btn-md btn-warning btn-block" type="Submit">Register New User</button>
+					</small>
+				</form>
+
+			</div>
+
+		</div>
+	</div> <!-- / .row -->
+</div> <!-- / .container -->
+
+<!-- JAVASCRIPT
+================================================== -->
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
